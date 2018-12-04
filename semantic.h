@@ -5,7 +5,6 @@
 
 #define MAX_TS 500
 #define YYSTYPE atributos
-#define line 0
 
 typedef enum {
     mark,             /* marca comienzo bloque */
@@ -35,18 +34,25 @@ typedef struct {
 } inTS ;
 
 typedef struct {
-    int   atrib ;      /* Atributo del símbolo (si tiene) */
-    char  *lexema ;    /* Nombre del lexema */
-    dtype tipo ;       /* Tipo del símbolo */
+    int   atrib ;       /* Atributo del símbolo (si tiene) */
+    char  *lexema ;     /* Nombre del lexema */
+    dtype tipo ;        /* Tipo del símbolo */
     unsigned int dims ; /* DIMENSIÓN DE ESTA PUTA MIERDA */
-    int tDim1 ;        /* MÁS TAMAÑOS DE MIERDA */
-    int tDim2 ;        /* MÁS BASURA */
+    int tDim1 ;         /* MÁS TAMAÑOS DE MIERDA */
+    int tDim2 ;         /* MÁS BASURA */
 } attributes ;
 
 unsigned int TOPE = 0 ; /* Tope de la pila */
 unsigned int Subprog ;  /* Indicador de comienzo de bloque de un subprog */
 inTS TS[MAX_TS] ;       /* Pila de la tabla de símbolos */
 
+extern int decVar ;
+extern int line ;
+extern int SubProg ;
+extern int decParam ;
+extern int decFunction ;
+extern dtype globalType ;
+extern int nParam ;
 extern int currentFunction ;
 extern int decVar ;
 

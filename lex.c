@@ -22,12 +22,28 @@ salto [\n]
 
 %%
 "return" return RETURN;
-"true" return LOGICVALUE;
-"false" return LOGICVALUE;
-"int" return DATATYPE;
-"double" return DATATYPE;
-"char" return DATATYPE;
-"bool" return DATATYPE;
+"true" {  yylval.atrib = 0;
+          return LOGICVALUE;
+       }
+"false" {  yylval.atrib = 1;
+          return LOGICVALUE;
+        }
+"int" {  yylval.atrib = 1;
+         yyval.type = INT;
+          return DATATYPE;
+      }
+"double" {  yylval.atrib = 2;
+            yyval.type = DOUBLE;
+          return DATATYPE;
+      }
+"char" {  yylval.atrib = 3;
+          yyval.type = CHARACTER;
+          return DATATYPE;
+      }
+"bool" {  yylval.atrib = 4;
+          yyval.type = BOOLEAN;
+          return DATATYPE;
+      }
 "if"  return CONDITIONIF;
 "else"  return CONDITIONELSE;
 "while" return LOOP;
@@ -42,27 +58,67 @@ salto [\n]
 "\{" return SQBRASTART;
 "\)" return PARENTEND;
 "\}" return SQBRAEND;
-"+" return ADDSUB;
-"-" return ADDSUB;
-"*" return MULTOPER;
-"/" return MULTOPER;
-"==" return EQUALITYOPER;
-"!=" return EQUALITYOPER;
-"<" return RELATIONOPER;
-">" return RELATIONOPER;
-">=" return RELATIONOPER;
-"<=" return RELATIONOPER;
-"%" return MULTOPER;
-"**" return MULTOPER;
+"+" { yylval.atrib = 0;
+      return ADDSUB;
+    }
+"-" { yylval.atrib = 1;
+      return ADDSUB;
+    }
+"*" { yylval.atrib = 0;
+      return MULTOPER;
+    }
+"/" { yylval.atrib = 1;
+      return MULTOPER;
+    }
+"==" {  yylval.atrib = 0;
+        return EQUALITYOPER;
+      }
+"!=" {  yylval.atrib = 1;
+        return EQUALITYOPER;
+      }
+"<" {
+      yylval.atrib = 0;
+      return RELATIONOPER;
+    }
+">" {
+      yylval.atrib = 1;
+      return RELATIONOPER;
+    }
+">=" {
+      yylval.atrib = 2;
+      return RELATIONOPER;
+    }
+"<=" {
+      yylval.atrib = 3;
+      return RELATIONOPER;
+    }
+"%" { yylval.atrib = 2;
+      return MULTOPER;
+    }
+"**" { yylval.atrib = 3;
+      return MULTOPER;
+    }
 "&&" return AND;
 "\|\|" return OR;
 "@" return AT;
-"!" return UNARYOPER;
-"#" return UNARYOPER;
-"|" return UNARYOPER;
-"?" return UNARYOPER;
-"<<" return LISTLEFTRIGHT;
-">>" return LISTLEFTRIGHT;
+"!" { yylval.atrib = 0;
+      return UNARYOPER;
+    }
+"#" { yylval.atrib = 1;
+      return UNARYOPER;
+    }
+"|" { yylval.atrib = 2;
+      return UNARYOPER;
+    }
+"?" { yylval.atrib = 3;
+      return UNARYOPER;
+    }
+"<<" { yylval.atrib = 0;
+       return LISTLEFTRIGHT;
+      }
+">>" { yylval.atrib = 1;
+       return LISTLEFTRIGHT;
+      }
 "=" return ASSIGNATION;
 "scanf" return INPUT;
 "printf"  return OUTPUT;
@@ -73,8 +129,14 @@ salto [\n]
 ":" return TWOPOINTS;
 "$" return DOLLAR;
 "@@" return ATT;
-{letter}{alphanum}* return IDENT;
-{digit}+  return INTVALUE;
+{letter}{alphanum}* { yylval.lexema = strdup(yytext);
+                      return IDENT;
+                    }
+                      
+
+{digit}+  { yylval.atrib = 
+            return INTVALUE;
+          }
 {caracter}  return CHARVALUE;
 {ascii} return STRINGVALUE;
 {nothing}* ;

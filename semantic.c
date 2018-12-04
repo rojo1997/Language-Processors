@@ -1,5 +1,15 @@
 #include "semantic.h"
 
+int line = 1 ;
+int decVar = 0 ;
+int decParam = 0 ;
+int decFunction = 0 ;
+int subProg = 0 ;
+dtype globalType = not_assigned;
+int nParam = 0 ;
+int currentFunction = -1 ;
+int aux = 0 ;
+
 /* Lista de funciones y procedimientos para manejo de la TS */
 // Devuelve si el atributo es array o no
 int isArray (attributes e) {
@@ -8,9 +18,7 @@ int isArray (attributes e) {
 /* Fin de funciones y procedimientos para manejo de la TS */
 
 void TS_InsertMark(){
-
-    inTS input;
-
+    inTS input ;
     input.entrada = mark ;
     input.nombre = "{" ;
     input.tipoDato = not_assigned ;
@@ -18,15 +26,11 @@ void TS_InsertMark(){
     input.dimensiones = 0 ;
     input.TamDimen1 = 0 ;
     input.TamDimen2 = 0 ;
-
     tsAddIn(input);
 
     if(Subprog == 1){
-
 		int j = TOPE - 2, mark = 0, function = 0 ;
-
 		while(j > 0 && TS[j].entrada == formal_parameter){
-
 			if(TS[j].entrada == formal_parameter) {
 				inTS newIn ;
 				newIn.entrada = TS[j].entrada ;
@@ -45,7 +49,7 @@ void TS_InsertMark(){
 
 void TS_CleanIn () {
     while(TS[TOPE-1].entrada != mark && TOPE > 0) TOPE-- ;
-	if (TS[TOPE-1].entrada == mark) TOPE-- ;
+	if (TS[TOPE-1].entrada == mark) TOPE--;
     if (TS[TOPE-1].entrada == formal_parameter) {
         while(TS[TOPE-1].entrada != function && TOPE > 0) TOPE-- ;
         TOPE--;
@@ -53,7 +57,7 @@ void TS_CleanIn () {
 }
 
 void TS_InsertSUBPROG (attributes e) {
-inTSinTS newIn;
+    inTS newIn;
     newIn.entrada = function;
     newIn.nombre = e.lexema ;
     newIn.tipoDato = not_assigned ;
@@ -77,7 +81,7 @@ void TS_InsertPARAMF (attributes e) {
 		inTS newIn;
 		newIn.entrada = formal_parameter;
 		newIn.nombre = e.lexema ;
-		newIn.tipoDato = not_assigned ;
+		newIn.tipoDato = globalType ;
 		newIn.parametros = 0 ;
 		newIn.dimensiones = e.dims ;
 		newIn.TamDimen1 = e.tDim1 ;
