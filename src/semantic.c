@@ -28,7 +28,7 @@ void TS_InsertMark(){
     input.TamDimen2 = 0 ;
     tsAddIn(input);
 
-    if(Subprog == 1){
+    if(subProg == 1){
 		int j = TOPE - 2, mark = 0, function = 0 ;
 		while(j > 0 && TS[j].entrada == formal_parameter){
 			if(TS[j].entrada == formal_parameter) {
@@ -71,7 +71,7 @@ void TS_InsertSUBPROG (attributes e) {
 void TS_InsertPARAMF (attributes e) {
     int j = TOPE - 1, found = 0 ;
 	while((j != currentFunction)  && (!found)) {
-		if(strcmp(TS[j].entrada, e.lexema) != 0) j-- ;
+		if(strcmp(TS[j].nombre, e.lexema) != 0) j-- ;
 		else {
 			found = 1;
 			printf("Semantic Error(%d): Exist param: %s\n", line, e.lexema) ;

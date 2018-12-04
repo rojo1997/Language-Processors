@@ -4,13 +4,14 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "semantic.h"
+
 void yyerror(const char *msg) ;
 int yylex(void) ;
 
 %}
 
 %error-verbose
-
 
 %left 	AT
 %left	OR
@@ -88,7 +89,7 @@ local_variables : local_variables Var_body_declaration
 
 end_mark_var_declaration: SQBRAEND ;
 
-Subprog_declaration : Subprog_head {subProg = 1;} block {subProg = 0;};
+Subprog_declaration : Subprog_head {SubProg = 1;} block {SubProg = 0;};
 
 Sentence : block
 	| assignment_sentence

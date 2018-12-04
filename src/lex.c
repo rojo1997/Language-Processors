@@ -21,27 +21,30 @@ real [0-9.0-9]
 salto [\n]
 
 %%
+
 "return" return RETURN;
 "true" {  yylval.atrib = 0;
+          yylval.lexema = strdup(yytext);
           return LOGICVALUE;
        }
 "false" {  yylval.atrib = 1;
+           yylval.lexema = strdup(yytext);
           return LOGICVALUE;
         }
 "int" {  yylval.atrib = 1;
-         yyval.type = INT;
+         yylval.tipo = INTVALUE;
           return DATATYPE;
       }
 "double" {  yylval.atrib = 2;
-            yyval.type = DOUBLE;
+            yylval.tipo = DOUBLEVALUE;
           return DATATYPE;
       }
 "char" {  yylval.atrib = 3;
-          yyval.type = CHARACTER;
+          yylval.tipo = CHARVALUE;
           return DATATYPE;
       }
 "bool" {  yylval.atrib = 4;
-          yyval.type = BOOLEAN;
+          yylval.tipo = LOGICVALUE;
           return DATATYPE;
       }
 "if"  return CONDITIONIF;
@@ -134,14 +137,25 @@ salto [\n]
                     }
                       
 
-{digit}+  { yylval.atrib = 
+{digit}+  { yylval.lexema = strdup(yytext);
+            yylval.atrib = 0;
             return INTVALUE;
           }
-{caracter}  return CHARVALUE;
-{ascii} return STRINGVALUE;
+{caracter}  { yylval.lexema = strdup(yytext);
+              yylval.atrib = 1;
+            return CHARVALUE;
+          }
+{ascii} {
+         yylval.lexema = strdup(yytext);
+         yylval.atrib = 2;
+         return STRINGVALUE;
+        }
 {nothing}* ;
-{digit}*{real}{digit}* return DOUBLEVALUE;
+{digit}*{real}{digit}* {  yylval.lexema = strdup(yytext);
+                          yylval.atrib = 3;
+                          return DOUBLEVALUE;
+                        }
 {salto} line = line+1;
 . {printf("\nError lexico en linea %d lexema: %s \n", line, yytext);}
-%%
 
+%%

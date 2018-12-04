@@ -4,7 +4,7 @@
 #include <stdbool.h>
 
 #define MAX_TS 500
-#define YYSTYPE atributos
+#define YYSTYPE attributes
 
 typedef enum {
     mark,             /* marca comienzo bloque */
@@ -34,12 +34,12 @@ typedef struct {
 } inTS ;
 
 typedef struct {
-    int   atrib ;       /* Atributo del símbolo (si tiene) */
-    char  *lexema ;     /* Nombre del lexema */
-    dtype tipo ;        /* Tipo del símbolo */
-    unsigned int dims ; /* DIMENSIÓN DE ESTA PUTA MIERDA */
-    int tDim1 ;         /* MÁS TAMAÑOS DE MIERDA */
-    int tDim2 ;         /* MÁS BASURA */
+    int          atrib ;   /* Atributo del símbolo (si tiene) */
+    char         *lexema ; /* Nombre del lexema */
+    dtype        tipo ;    /* Tipo del símbolo */
+    unsigned int dims ;    /* DIMENSIÓN DE ESTA PUTA MIERDA */
+    int          tDim1 ;   /* MÁS TAMAÑOS DE MIERDA */
+    int          tDim2 ;   /* MÁS BASURA */
 } attributes ;
 
 unsigned int TOPE = 0 ; /* Tope de la pila */

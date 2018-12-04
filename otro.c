@@ -1,6 +1,3 @@
-
-
-
 int main ( ) {
     declare{
         int i ;
