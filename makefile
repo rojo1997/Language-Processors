@@ -20,5 +20,8 @@ y.tab.c: sintactico.y lex.yy.c
 lex.yy.c: lex.c
 	flex lex.c
 
+semantic.o: semantic.c semantic.h
+	gcc -c semantic.c -I/semantic.h
+
 clean:
 	-rm -f prueba main.o y.tab.o y.tab.c lex.yy.c

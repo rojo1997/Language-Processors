@@ -65,7 +65,7 @@ Program: Program_head block;
 Program_head : DATATYPE MAINP PARENTSTART PARENTEND
 	| error ;
 
-block :	Block_init Local_var_declaration Subprogs_declaration Sentences Block_end;
+block :	Block_init { TS_InsertMark(); } Local_var_declaration Subprogs_declaration Sentences Block_end { TS_CleanIn(); };
 
 Block_init : SQBRASTART;
 
@@ -88,7 +88,7 @@ local_variables : local_variables Var_body_declaration
 
 end_mark_var_declaration: SQBRAEND ;
 
-Subprog_declaration : Subprog_head block ;
+Subprog_declaration : Subprog_head {subProg = 1;} block {subProg = 0;};
 
 Sentence : block
 	| assignment_sentence
@@ -100,13 +100,13 @@ Sentence : block
 	| return_sentence
 	| list_operations ;
 
-Var_body_declaration : types list_of_ident SEMICOLON
+Var_body_declaration : types { setType($1); } list_of_ident SEMICOLON
 	| error ;
 
-Subprog_head : types IDENT PARENTSTART arg_func PARENTEND;
+Subprog_head : types IDENT { TS_InsertSUBPROG($2); } PARENTSTART arg_func PARENTEND;
 
-arg_func : arg_func COLON types IDENT
-	| types IDENT
+arg_func : arg_func COLON types IDENT {TS_InsertPARAMF($4);}
+	| types IDENT {TS_InsertPARAMF($2);}
 	| error
 	| ;
 
@@ -165,7 +165,7 @@ expression_list : expression_list COLON expression
 types:	DATATYPE
 	| LISTNAME DATATYPE ;
 
-list_of_ident:	list_of_ident COLON IDENT
+list_of_ident:	list_of_ident COLON IDENT {TS_InsertIDENT($3);}
 	| IDENT ;
 
 constants:	INTVALUE
@@ -207,3 +207,5 @@ character_list:	character_list COLON CHARVALUE
 void yyerror (const char *msg) {
 	fprintf(stderr, "Linea %d: %s \n", line, msg);
 }
+
+//export line ;
