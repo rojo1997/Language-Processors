@@ -35,14 +35,20 @@ typedef struct {
 } inTS ;
 
 typedef struct {
-    int   atrib ;   /* Atributo del símbolo (si tiene) */
-    char  *lexema ; /* Nombre del lexema */
-    dtype tipo ;    /* Tipo del símbolo */
+    int   atrib ;      /* Atributo del símbolo (si tiene) */
+    char  *lexema ;    /* Nombre del lexema */
+    dtype tipo ;       /* Tipo del símbolo */
+    unsigned int dims ; /* DIMENSIÓN DE ESTA PUTA MIERDA */
+    int tDim1 ;        /* MÁS TAMAÑOS DE MIERDA */
+    int tDim2 ;        /* MÁS BASURA */
 } attributes ;
 
 unsigned int TOPE = 0 ; /* Tope de la pila */
 unsigned int Subprog ;  /* Indicador de comienzo de bloque de un subprog */
 inTS TS[MAX_TS] ;       /* Pila de la tabla de símbolos */
+
+extern int currentFunction ;
+extern int decVar ;
 
 // Funciones
 // Devuelve si el atributo es array o no

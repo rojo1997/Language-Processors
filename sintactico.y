@@ -166,7 +166,7 @@ types:	DATATYPE
 	| LISTNAME DATATYPE ;
 
 list_of_ident:	list_of_ident COLON IDENT {TS_InsertIDENT($3);}
-	| IDENT ;
+	| IDENT {TS_InsertIDENT($1);};
 
 constants:	INTVALUE
 	| DOUBLEVALUE
