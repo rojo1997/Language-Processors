@@ -62,7 +62,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "sintactico.y" /* yacc.c:339  */
+#line 1 "src/sintactico.y" /* yacc.c:339  */
 
 
 #include <stdlib.h>
@@ -75,7 +75,7 @@ void yyerror(const char *msg) ;
 int yylex(void) ;
 
 
-#line 79 "y.tab.c" /* yacc.c:339  */
+#line 79 "src/y.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -95,8 +95,8 @@ int yylex(void) ;
 
 /* In a future release of Bison, this section will be replaced
    by #include "y.tab.h".  */
-#ifndef YY_YY_Y_TAB_H_INCLUDED
-# define YY_YY_Y_TAB_H_INCLUDED
+#ifndef YY_YY_SRC_Y_TAB_H_INCLUDED
+# define YY_YY_SRC_Y_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -166,11 +166,11 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_Y_TAB_H_INCLUDED  */
+#endif /* !YY_YY_SRC_Y_TAB_H_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 
-#line 174 "y.tab.c" /* yacc.c:358  */
+#line 174 "src/y.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1416,67 +1416,67 @@ yyreduce:
   switch (yyn)
     {
         case 5:
-#line 69 "sintactico.y" /* yacc.c:1646  */
+#line 69 "src/sintactico.y" /* yacc.c:1646  */
     { TS_InsertMark(); }
-#line 1422 "y.tab.c" /* yacc.c:1646  */
+#line 1422 "src/y.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 69 "sintactico.y" /* yacc.c:1646  */
+#line 69 "src/sintactico.y" /* yacc.c:1646  */
     { TS_CleanIn(); }
-#line 1428 "y.tab.c" /* yacc.c:1646  */
+#line 1428 "src/y.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 92 "sintactico.y" /* yacc.c:1646  */
+#line 92 "src/sintactico.y" /* yacc.c:1646  */
     {SubProg = 1;}
-#line 1434 "y.tab.c" /* yacc.c:1646  */
+#line 1434 "src/y.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 92 "sintactico.y" /* yacc.c:1646  */
+#line 92 "src/sintactico.y" /* yacc.c:1646  */
     {SubProg = 0;}
-#line 1440 "y.tab.c" /* yacc.c:1646  */
+#line 1440 "src/y.tab.c" /* yacc.c:1646  */
     break;
 
   case 31:
-#line 104 "sintactico.y" /* yacc.c:1646  */
+#line 104 "src/sintactico.y" /* yacc.c:1646  */
     { setType((yyvsp[0])); }
-#line 1446 "y.tab.c" /* yacc.c:1646  */
+#line 1446 "src/y.tab.c" /* yacc.c:1646  */
     break;
 
   case 34:
-#line 107 "sintactico.y" /* yacc.c:1646  */
+#line 107 "src/sintactico.y" /* yacc.c:1646  */
     { TS_InsertSUBPROG((yyvsp[0])); }
-#line 1452 "y.tab.c" /* yacc.c:1646  */
+#line 1452 "src/y.tab.c" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 109 "sintactico.y" /* yacc.c:1646  */
+#line 109 "src/sintactico.y" /* yacc.c:1646  */
     {TS_InsertPARAMF((yyvsp[0]));}
-#line 1458 "y.tab.c" /* yacc.c:1646  */
+#line 1458 "src/y.tab.c" /* yacc.c:1646  */
     break;
 
   case 37:
-#line 110 "sintactico.y" /* yacc.c:1646  */
+#line 110 "src/sintactico.y" /* yacc.c:1646  */
     {TS_InsertPARAMF((yyvsp[0]));}
-#line 1464 "y.tab.c" /* yacc.c:1646  */
+#line 1464 "src/y.tab.c" /* yacc.c:1646  */
     break;
 
   case 81:
-#line 169 "sintactico.y" /* yacc.c:1646  */
+#line 169 "src/sintactico.y" /* yacc.c:1646  */
     {TS_InsertIDENT((yyvsp[0]));}
-#line 1470 "y.tab.c" /* yacc.c:1646  */
+#line 1470 "src/y.tab.c" /* yacc.c:1646  */
     break;
 
   case 82:
-#line 170 "sintactico.y" /* yacc.c:1646  */
+#line 170 "src/sintactico.y" /* yacc.c:1646  */
     {TS_InsertIDENT((yyvsp[0]));}
-#line 1476 "y.tab.c" /* yacc.c:1646  */
+#line 1476 "src/y.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1480 "y.tab.c" /* yacc.c:1646  */
+#line 1480 "src/y.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1704,7 +1704,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 204 "sintactico.y" /* yacc.c:1906  */
+#line 204 "src/sintactico.y" /* yacc.c:1906  */
 
 
 #include "lex.yy.c"

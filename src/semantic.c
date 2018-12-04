@@ -1,10 +1,10 @@
 #include "semantic.h"
 
-int line = 1 ;
+//int line = 1 ;
 int decVar = 0 ;
 int decParam = 0 ;
 int decFunction = 0 ;
-int subProg = 0 ;
+int SubProg = 0 ;
 dtype globalType = not_assigned;
 int nParam = 0 ;
 int currentFunction = -1 ;
@@ -28,20 +28,20 @@ void TS_InsertMark(){
     input.TamDimen2 = 0 ;
     tsAddIn(input);
 
-    if(subProg == 1){
-		int j = TOPE - 2, mark = 0, function = 0 ;
+    if(SubProg == 1){
+		int j = TOPE - 1;
 		while(j > 0 && TS[j].entrada == formal_parameter){
-			if(TS[j].entrada == formal_parameter) {
-				inTS newIn ;
-				newIn.entrada = TS[j].entrada ;
-				newIn.nombre = TS[j].nombre ;
-				newIn.tipoDato = TS[j].tipoDato ;
-				newIn.parametros = TS[j].parametros ;
-				newIn.dimensiones = TS[j].dimensiones ;
-				newIn.TamDimen1 = TS[j].TamDimen1 ;
-				newIn.TamDimen2 = TS[j].TamDimen2 ;
-				tsAddIn(newIn) ;
-			}
+			
+			inTS newIn ;
+			newIn.entrada = TS[j].entrada ;
+			newIn.nombre = TS[j].nombre ;
+			newIn.tipoDato = TS[j].tipoDato ;
+			newIn.parametros = TS[j].parametros ;
+			newIn.dimensiones = TS[j].dimensiones ;
+			newIn.TamDimen1 = TS[j].TamDimen1 ;
+			newIn.TamDimen2 = TS[j].TamDimen2 ;
+			tsAddIn(newIn) ;
+			
 			j-- ;
 		}
 	}

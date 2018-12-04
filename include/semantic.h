@@ -42,10 +42,11 @@ typedef struct {
     int          tDim2 ;   /* MÁS BASURA */
 } attributes ;
 
-unsigned int TOPE = 0 ; /* Tope de la pila */
+//unsigned int TOPE = 0 ; /* Tope de la pila */
 unsigned int Subprog ;  /* Indicador de comienzo de bloque de un subprog */
 inTS TS[MAX_TS] ;       /* Pila de la tabla de símbolos */
 
+extern unsigned int TOPE ;
 extern int decVar ;
 extern int line ;
 extern int SubProg ;

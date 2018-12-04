@@ -1,5 +1,6 @@
+#line 2 "src/lex.yy.c"
 
-#line 3 "lex.yy.c"
+#line 4 "src/lex.yy.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -558,16 +559,16 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "lex.c"
-#line 2 "lex.c"
+#line 1 "src/lex.c"
+#line 2 "src/lex.c"
   #include <stdio.h>
   #include "y.tab.h"
   #include <stdlib.h>
   #include <string.h>
 
   int line = 1;
-#line 570 "lex.yy.c"
-#line 571 "lex.yy.c"
+#line 571 "src/lex.yy.c"
+#line 572 "src/lex.yy.c"
 
 #define INITIAL 0
 
@@ -784,10 +785,10 @@ YY_DECL
 		}
 
 	{
-#line 23 "lex.c"
+#line 23 "src/lex.c"
 
 
-#line 791 "lex.yy.c"
+#line 792 "src/lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -856,12 +857,12 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 25 "lex.c"
+#line 25 "src/lex.c"
 return RETURN;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 26 "lex.c"
+#line 26 "src/lex.c"
 {  yylval.atrib = 0;
           yylval.lexema = strdup(yytext);
           return LOGICVALUE;
@@ -869,7 +870,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 30 "lex.c"
+#line 30 "src/lex.c"
 {  yylval.atrib = 1;
            yylval.lexema = strdup(yytext);
           return LOGICVALUE;
@@ -877,7 +878,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 34 "lex.c"
+#line 34 "src/lex.c"
 {  yylval.atrib = 1;
          yylval.tipo = INTVALUE;
           return DATATYPE;
@@ -885,7 +886,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 38 "lex.c"
+#line 38 "src/lex.c"
 {  yylval.atrib = 2;
             yylval.tipo = DOUBLEVALUE;
           return DATATYPE;
@@ -893,7 +894,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 42 "lex.c"
+#line 42 "src/lex.c"
 {  yylval.atrib = 3;
           yylval.tipo = CHARVALUE;
           return DATATYPE;
@@ -901,7 +902,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 46 "lex.c"
+#line 46 "src/lex.c"
 {  yylval.atrib = 4;
           yylval.tipo = LOGICVALUE;
           return DATATYPE;
@@ -909,119 +910,119 @@ YY_RULE_SETUP
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 50 "lex.c"
+#line 50 "src/lex.c"
 return CONDITIONIF;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 51 "lex.c"
+#line 51 "src/lex.c"
 return CONDITIONELSE;
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 52 "lex.c"
+#line 52 "src/lex.c"
 return LOOP;
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 53 "lex.c"
+#line 53 "src/lex.c"
 return OPTION;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 54 "lex.c"
+#line 54 "src/lex.c"
 return CASE;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 55 "lex.c"
+#line 55 "src/lex.c"
 return ENDCASE;
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 56 "lex.c"
+#line 56 "src/lex.c"
 return DEFAULTCASE;
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 57 "lex.c"
+#line 57 "src/lex.c"
 return LISTNAME;
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 58 "lex.c"
+#line 58 "src/lex.c"
 return DECREMENT;
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 59 "lex.c"
+#line 59 "src/lex.c"
 return INCREMENT;
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 60 "lex.c"
+#line 60 "src/lex.c"
 return PARENTSTART;
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 61 "lex.c"
+#line 61 "src/lex.c"
 return SQBRASTART;
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 62 "lex.c"
+#line 62 "src/lex.c"
 return PARENTEND;
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 63 "lex.c"
+#line 63 "src/lex.c"
 return SQBRAEND;
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 64 "lex.c"
+#line 64 "src/lex.c"
 { yylval.atrib = 0;
       return ADDSUB;
     }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 67 "lex.c"
+#line 67 "src/lex.c"
 { yylval.atrib = 1;
       return ADDSUB;
     }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 70 "lex.c"
+#line 70 "src/lex.c"
 { yylval.atrib = 0;
       return MULTOPER;
     }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 73 "lex.c"
+#line 73 "src/lex.c"
 { yylval.atrib = 1;
       return MULTOPER;
     }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 76 "lex.c"
+#line 76 "src/lex.c"
 {  yylval.atrib = 0;
         return EQUALITYOPER;
       }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 79 "lex.c"
+#line 79 "src/lex.c"
 {  yylval.atrib = 1;
         return EQUALITYOPER;
       }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 82 "lex.c"
+#line 82 "src/lex.c"
 {
       yylval.atrib = 0;
       return RELATIONOPER;
@@ -1029,7 +1030,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 86 "lex.c"
+#line 86 "src/lex.c"
 {
       yylval.atrib = 1;
       return RELATIONOPER;
@@ -1037,7 +1038,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 90 "lex.c"
+#line 90 "src/lex.c"
 {
       yylval.atrib = 2;
       return RELATIONOPER;
@@ -1045,7 +1046,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 94 "lex.c"
+#line 94 "src/lex.c"
 {
       yylval.atrib = 3;
       return RELATIONOPER;
@@ -1053,135 +1054,135 @@ YY_RULE_SETUP
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 98 "lex.c"
+#line 98 "src/lex.c"
 { yylval.atrib = 2;
       return MULTOPER;
     }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 101 "lex.c"
+#line 101 "src/lex.c"
 { yylval.atrib = 3;
       return MULTOPER;
     }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 104 "lex.c"
+#line 104 "src/lex.c"
 return AND;
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 105 "lex.c"
+#line 105 "src/lex.c"
 return OR;
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 106 "lex.c"
+#line 106 "src/lex.c"
 return AT;
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 107 "lex.c"
+#line 107 "src/lex.c"
 { yylval.atrib = 0;
       return UNARYOPER;
     }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 110 "lex.c"
+#line 110 "src/lex.c"
 { yylval.atrib = 1;
       return UNARYOPER;
     }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 113 "lex.c"
+#line 113 "src/lex.c"
 { yylval.atrib = 2;
       return UNARYOPER;
     }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 116 "lex.c"
+#line 116 "src/lex.c"
 { yylval.atrib = 3;
       return UNARYOPER;
     }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 119 "lex.c"
+#line 119 "src/lex.c"
 { yylval.atrib = 0;
        return LISTLEFTRIGHT;
       }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 122 "lex.c"
+#line 122 "src/lex.c"
 { yylval.atrib = 1;
        return LISTLEFTRIGHT;
       }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 125 "lex.c"
+#line 125 "src/lex.c"
 return ASSIGNATION;
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 126 "lex.c"
+#line 126 "src/lex.c"
 return INPUT;
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 127 "lex.c"
+#line 127 "src/lex.c"
 return OUTPUT;
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 128 "lex.c"
+#line 128 "src/lex.c"
 return MAINP;
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 129 "lex.c"
+#line 129 "src/lex.c"
 return SEMICOLON;
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 130 "lex.c"
+#line 130 "src/lex.c"
 return COLON;
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 131 "lex.c"
+#line 131 "src/lex.c"
 return DECLARE;
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 132 "lex.c"
+#line 132 "src/lex.c"
 return TWOPOINTS;
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 133 "lex.c"
+#line 133 "src/lex.c"
 return DOLLAR;
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 134 "lex.c"
+#line 134 "src/lex.c"
 return ATT;
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 135 "lex.c"
+#line 135 "src/lex.c"
 { yylval.lexema = strdup(yytext);
                       return IDENT;
                     }
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 140 "lex.c"
+#line 140 "src/lex.c"
 { yylval.lexema = strdup(yytext);
             yylval.atrib = 0;
             return INTVALUE;
@@ -1190,7 +1191,7 @@ YY_RULE_SETUP
 case 55:
 /* rule 55 can match eol */
 YY_RULE_SETUP
-#line 144 "lex.c"
+#line 144 "src/lex.c"
 { yylval.lexema = strdup(yytext);
               yylval.atrib = 1;
             return CHARVALUE;
@@ -1199,7 +1200,7 @@ YY_RULE_SETUP
 case 56:
 /* rule 56 can match eol */
 YY_RULE_SETUP
-#line 148 "lex.c"
+#line 148 "src/lex.c"
 {
          yylval.lexema = strdup(yytext);
          yylval.atrib = 2;
@@ -1208,12 +1209,12 @@ YY_RULE_SETUP
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 153 "lex.c"
+#line 153 "src/lex.c"
 ;
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 154 "lex.c"
+#line 154 "src/lex.c"
 {  yylval.lexema = strdup(yytext);
                           yylval.atrib = 3;
                           return DOUBLEVALUE;
@@ -1222,20 +1223,20 @@ YY_RULE_SETUP
 case 59:
 /* rule 59 can match eol */
 YY_RULE_SETUP
-#line 158 "lex.c"
+#line 158 "src/lex.c"
 line = line+1;
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 159 "lex.c"
+#line 159 "src/lex.c"
 {printf("\nError lexico en linea %d lexema: %s \n", line, yytext);}
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 161 "lex.c"
+#line 161 "src/lex.c"
 ECHO;
 	YY_BREAK
-#line 1239 "lex.yy.c"
+#line 1240 "src/lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2252,5 +2253,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 161 "lex.c"
+#line 161 "src/lex.c"
 
