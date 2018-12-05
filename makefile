@@ -28,7 +28,6 @@ clean:
 	-rm -f $(BIN)/*
 	-rm -f $(OBJ)/*.o
 	-rm -f $(SRC)/y.tab.c
-	-rm -f $(SRC)/lex.yy.c 
 	-rm -f $(SRC)/y.output
-	-rm -f $(SRC)/y.tab.h 
+	-rm -f $(SRC)/y.tab.h
 	-rm -f $(SRC)/lex.yy.c

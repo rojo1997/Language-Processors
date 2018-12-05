@@ -1,6 +1,7 @@
 #include "semantic.h"
 
 //int line = 1 ;
+unsigned int TOPE = 0 ;
 int decVar = 0 ;
 int decParam = 0 ;
 int decFunction = 0 ;
@@ -13,8 +14,16 @@ int aux = 0 ;
 /* Lista de funciones y procedimientos para manejo de la TS */
 // Devuelve si el atributo es array o no
 int isArray (attributes e) {
-    //return (e.nDim != 0) ;
-}    
+	return (1) ;
+}
+// Devuelve si los dos posibles arrays que recibe tienen el mismo tamaño
+int equalSize (attributes e1, attributes e2) {
+	return (1) ;
+}
+// Guarda el tipo de la variable
+int setType (attributes value) {
+	return (1) ;
+}
 /* Fin de funciones y procedimientos para manejo de la TS */
 
 void TS_InsertMark(){
